@@ -5,16 +5,13 @@ class SessionPersistence
     @session[:lists] ||= []
   end
 
-  def disconnect
-    return true
-  end
-
   def find_list(id)
     @session[:lists].find{ |list| list[:id] == id }
   end
 
   def all_lists
     result = @session[:lists]
+    p result
     result
   end
 
